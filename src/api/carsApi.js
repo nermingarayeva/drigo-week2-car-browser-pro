@@ -14,7 +14,7 @@ export function getCars() {
       if (Math.random() < FAIL_RATE) {
         reject(
           new Error(
-            "Maşınları yükləmək mümkün olmadı. Zəhmət olmasa yenidən cəhd edin."
+            "It was not possible to load the cars. Please try again."
           )
         );
         return;

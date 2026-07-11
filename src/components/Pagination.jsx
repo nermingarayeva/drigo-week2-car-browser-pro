@@ -9,11 +9,11 @@ export function Pagination({ currentPage, totalPages, onPageChange }) {
           onClick={() => onPageChange(currentPage - 1)}
           disabled={currentPage <= 1}
         >
-          ← Əvvəlki
+          ← Previous
         </button>
   
         <span className="pagination__status">
-          Səhifə {currentPage} / {totalPages}
+         Page {currentPage} / {totalPages}
         </span>
   
         <button
@@ -22,7 +22,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }) {
           onClick={() => onPageChange(currentPage + 1)}
           disabled={currentPage >= totalPages}
         >
-          Növbəti →
+         Next →
         </button>
       </nav>
     );

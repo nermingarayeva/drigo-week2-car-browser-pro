@@ -8,8 +8,8 @@ export function CarCard({ car, isFavorite, onToggleFavorite }) {
         className={`favorite-btn ${isFavorite ? "favorite-btn--active" : ""}`}
         onClick={() => onToggleFavorite(car.id)}
         aria-pressed={isFavorite}
-        aria-label={isFavorite ? "Favoritlərdən çıxar" : "Favoritlərə əlavə et"}
-        title={isFavorite ? "Favoritlərdən çıxar" : "Favoritlərə əlavə et"}
+        aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+        title={isFavorite ? "Remove from favorites" : "Add to favorites"}
       >
         {isFavorite ? "★" : "☆"}
       </button>
@@ -17,11 +17,11 @@ export function CarCard({ car, isFavorite, onToggleFavorite }) {
       <Link to={`/cars/${car.id}`} className="car-card__link">
         <h3 className="car-card__name">{car.name}</h3>
         <p className="car-card__meta">
-          {car.type} · {car.transmission} · {car.seats} nəfərlik
+          {car.type} · {car.transmission} · {car.seats} person (capacity/size)
         </p>
-        <p className="car-card__price">${car.pricePerDay}/gün</p>
+        <p className="car-card__price">${car.pricePerDay}/day</p>
         <span className={`badge ${car.available ? "badge--available" : "badge--unavailable"}`}>
-          {car.available ? "Mövcuddur" : "Mövcud deyil"}
+          {car.available ? "Available" : "Does not exist"}
         </span>
       </Link>
     </div>

@@ -23,29 +23,29 @@ export function FiltersPanel({ filters, actions }) {
   return (
     <aside className="filters-panel">
       <label className="field">
-        <span>Axtarış</span>
+        <span>Search</span>
         <input
           type="text"
-          placeholder="Maşın adı..."
+          placeholder="Car name..."
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
       </label>
 
       <label className="field">
-        <span>Sürətlər qutusu</span>
+        <span>Transmission</span>
         <select
           value={filters.transmission}
           onChange={(e) => actions.setTransmission(e.target.value)}
         >
-          <option value="all">Hamısı</option>
-          <option value="Automatic">Avtomat</option>
-          <option value="Manual">Mexaniki</option>
+          <option value="all">All</option>
+          <option value="Automatic">Automatic</option>
+          <option value="Manual">Mechanical</option>
         </select>
       </label>
 
       <fieldset className="field field--group">
-        <legend>Növ (bir neçəsini seç)</legend>
+        <legend>Type (select a few)</legend>
         {TYPES.map((type) => (
           <label key={type} className="checkbox-row">
             <input
@@ -59,17 +59,19 @@ export function FiltersPanel({ filters, actions }) {
       </fieldset>
 
       <label className="field">
-        <span>Oturacaq sayı</span>
+        <span>Number of seats</span>
         <select
           value={filters.seats}
           onChange={(e) =>
-            actions.setSeats(e.target.value === "all" ? "all" : Number(e.target.value))
+            actions.setSeats(
+              e.target.value === "all" ? "all" : Number(e.target.value)
+            )
           }
         >
-          <option value="all">Hamısı</option>
+          <option value="all">All</option>
           {SEAT_OPTIONS.map((n) => (
             <option key={n} value={n}>
-              {n} nəfərlik
+              {n} person (capacity/size)
             </option>
           ))}
         </select>
@@ -87,7 +89,7 @@ export function FiltersPanel({ filters, actions }) {
           checked={filters.availableOnly}
           onChange={(e) => actions.setAvailableOnly(e.target.checked)}
         />
-        Yalnız mövcud olanlar
+        Only available ones{" "}
       </label>
 
       <label className="checkbox-row">
@@ -96,13 +98,17 @@ export function FiltersPanel({ filters, actions }) {
           checked={filters.favoritesOnly}
           onChange={(e) => actions.setFavoritesOnly(e.target.checked)}
         />
-        Yalnız favoritlər
+        Favorites only{" "}
       </label>
 
       <SortSelect value={filters.sort} onChange={actions.setSort} />
 
-      <button type="button" className="btn btn--ghost" onClick={actions.clearFilters}>
-        Filtrləri sıfırla
+      <button
+        type="button"
+        className="btn btn--ghost"
+        onClick={actions.clearFilters}
+      >
+        Reset filters{" "}
       </button>
     </aside>
   );

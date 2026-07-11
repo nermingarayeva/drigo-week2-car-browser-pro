@@ -13,8 +13,8 @@ export default function App() {
           path="*"
           element={
             <div className="page">
-              <p>Səhifə tapılmadı.</p>
-              <a href="/">Ana səhifəyə qayıt</a>
+              <p>Page not found.</p>
+              <a href="/">Return to the home page</a>
             </div>
           }
         />

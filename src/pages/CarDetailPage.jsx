@@ -16,7 +16,6 @@ export function CarDetailPage() {
     return cars.find((c) => c.id === Number(id));
   }, [cars, id]);
 
-
   function handleBack() {
     navigate(-1);
   }
@@ -41,10 +40,10 @@ export function CarDetailPage() {
     return (
       <div className="page page--detail">
         <div className="state-panel state-panel--empty">
-          <p className="state-panel__title">Maşın tapılmadı</p>
-          <p>#{id} nömrəli maşın mövcud deyil.</p>
+          <p className="state-panel__title">Car not found</p>
+          <p>#{id} The car with that number does not exist.</p>
           <Link className="btn btn--ghost" to="/">
-            Siyahıya qayıt
+            Return to the list{" "}
           </Link>
         </div>
       </div>
@@ -56,7 +55,7 @@ export function CarDetailPage() {
   return (
     <div className="page page--detail">
       <button type="button" className="btn btn--ghost" onClick={handleBack}>
-        ← Geri
+        ← Back
       </button>
 
       <article className="car-detail">
@@ -68,32 +67,36 @@ export function CarDetailPage() {
             onClick={() => toggleFavorite(car.id)}
             aria-pressed={favorite}
           >
-            {favorite ? "★ Favoritdir" : "☆ Favoritə əlavə et"}
+            {favorite ? "★ It's a favorite." : "☆ Add to favorites"}
           </button>
         </div>
 
         <dl className="car-detail__specs">
           <div>
-            <dt>Növ</dt>
+            <dt>Type</dt>
             <dd>{car.type}</dd>
           </div>
           <div>
-            <dt>Sürətlər qutusu</dt>
+            <dt>Transmission</dt>
             <dd>{car.transmission}</dd>
           </div>
           <div>
-            <dt>Oturacaq sayı</dt>
+            <dt>Number of seats</dt>
             <dd>{car.seats}</dd>
           </div>
           <div>
-            <dt>Qiymət</dt>
-            <dd>${car.pricePerDay}/gün</dd>
+            <dt>Price</dt>
+            <dd>${car.pricePerDay}/day</dd>
           </div>
           <div>
             <dt>Status</dt>
             <dd>
-              <span className={`badge ${car.available ? "badge--available" : "badge--unavailable"}`}>
-                {car.available ? "Mövcuddur" : "Mövcud deyil"}
+              <span
+                className={`badge ${
+                  car.available ? "badge--available" : "badge--unavailable"
+                }`}
+              >
+                {car.available ? "Available" : "Does not exist"}
               </span>
             </dd>
           </div>

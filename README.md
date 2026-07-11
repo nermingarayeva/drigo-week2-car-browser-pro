@@ -1,16 +1,65 @@
-# React + Vite
+# Car Browser Pro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Car Browser Pro is a React + Vite application that allows users to browse available cars, search by name, and filter vehicles by category.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Display car list
+- Search cars by name
+- Filter by vehicle type
+- View car details
+- Responsive design
+- React Router navigation
 
-## React Compiler
+## Technologies
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- JavaScript (ES6+)
+- React Router DOM
+- CSS
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Clone the repository:
+
+```bash
+git clone https://github.com/nermingarayeva/drigo-week2-car-browser-pro
+```
+
+Navigate to the project:
+
+```bash
+cd car-browser-pro
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+## Project Structure
+
+```
+src/
+ ├── api/
+ ├── components/
+ ├── data/
+ ├── hooks/
+ ├── pages/
+ ├── App.jsx
+ └── main.jsx
+```
+
+## Author
+
+## Author
+
+Developed as part of a frontend internship technical assessment.

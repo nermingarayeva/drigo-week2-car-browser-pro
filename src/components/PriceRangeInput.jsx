@@ -30,7 +30,7 @@ export function PriceRangeInput({ minPrice, maxPrice, onCommit }) {
   return (
     <div className="price-range">
       <label className="field">
-        <span>Min qiymət</span>
+        <span>Min price</span>
         <input
           type="number"
           min="0"
@@ -41,7 +41,7 @@ export function PriceRangeInput({ minPrice, maxPrice, onCommit }) {
       </label>
       <span className="price-range__separator">—</span>
       <label className="field">
-        <span>Maks qiymət</span>
+        <span>Max price</span>
         <input
           type="number"
           min="0"

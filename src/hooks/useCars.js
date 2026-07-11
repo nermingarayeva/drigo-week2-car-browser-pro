@@ -28,7 +28,7 @@ export function useCars() {
       })
       .catch((err) => {
         if (!isMountedRef.current) return;
-        setError(err.message || "Naməlum xəta baş verdi.");
+        setError(err.message || "An unknown error occurred.");
         setLoading(false);
       });
   }, []);

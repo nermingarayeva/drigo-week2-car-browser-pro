@@ -89,7 +89,7 @@ export function CarListPage() {
     <div className="page page--list">
       <header className="page__header">
         <h1>Car Browser Pro</h1>
-        <p className="page__subtitle">İcarə üçün maşın axtar, filtrlə, favoritlə.</p>
+        <p className="page__subtitle">Search for a rental car, filter, and save to favorites.</p>
       </header>
 
       <div className="page__body">
@@ -104,7 +104,7 @@ export function CarListPage() {
           {!loading && !error && filteredAndSorted.length > 0 && (
             <>
               <p className="results__count">
-                {filteredAndSorted.length} nəticədən {visibleCars.length} göstərilir
+                {filteredAndSorted.length} from the result {visibleCars.length} is shown
               </p>
               <CarList
                 cars={visibleCars}
